@@ -72,6 +72,17 @@ let addnote = (text = "") => {
         saveonlocal();
     });
 
+    //on page refreshing
+    if (window.performance) {
+        if (performance.navigation.type == 1) {
+          if(note.querySelector("p").innerHTML!=""){
+            note.querySelector("textarea").style.zIndex = "-1";
+            note.querySelector("button").style.zIndex = "-2";
+          }
+        } else {
+          alert( "This page is not reloaded");
+        }
+      }
 }
 
 // getting and displaying data from local storage

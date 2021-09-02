@@ -11,6 +11,16 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* font-style: oblique; */
 }
+a{
+    text-decoration-color: chocolate;
+    text-decoration-line: none;
+    color: brown;
+    transition: ease-in-out all 0.6s;
+}
+a:hover{
+    text-decoration-line: underline;
+    text-decoration-color: brown;
+}
 .header{
     /* border: 1px black solid; */
     height: 10vh;
