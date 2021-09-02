@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-style: oblique; */
+}
+.header{
+    /* border: 1px black solid; */
+    height: 10vh;
+    width: 100%;
+    background-color: #b2bec3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.keepnote{
+    /* border: 1px black solid; */
+    color: brown;
+    margin-left: 3%;
+    font-family: cursive;
+    animation: keepnoteanimation 3s infinite;
+    transition: ease-in-out;
+    font-size: 32px;
+}
+
+.keepnote:hover{
+    cursor: pointer;
+}
+@keyframes keepnoteanimation {
+    0%{color: rgb(251, 138, 0);}
+    20%{color: rgb(98, 7, 114);}
+    40%{color: rgb(160, 133, 130);}
+    60%{color: blueviolet;}
+    80%{color: brown;}
+}
+.addnote{
+    /* border: 1px black solid; */
+    margin-right: 2%;
+    overflow: hidden;
+}
+.addnote button{
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    font-size: 20px;
+    color: brown;
+    background-color: burlywood;
+    border-style: none;
+    position: relative;
+    transition: ease-in-out all 0.3s;
+    z-index: 1;
+}
+.addnote button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: ease-in-out all 0.3s;
+}
+.addnote button:hover:before{
+    transform: translateX(0%);
+    z-index: -1;
+}
+.addnote button:hover{
+    color: burlywood;
+    cursor: pointer;
+}
+.addnote button:active{
+    border-style: none;
+}
+
+.maincontainer{
+    padding: 2vh 0;
+    border: 1px black solid;
+    min-height: 90vh;
+    width: 100%;
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 3%;
+    justify-content: center;
+    align-items: center;
+    grid-row-gap: 2vh;
+}
+.note,.permanent_note{
+    border: 1px black solid;
+    height: 40vh;
+    /* width: 30%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.notehead{
+    border: 1px black solid;
+    width: 100%;
+    padding-left: 4%;
+    padding-right: 3%;
+    height: 24%;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
+    color: brown;
+    box-shadow: -5px -8px;
+}
+.notehead div{
+    /* border: 1px black solid; */
+    width: 20%;
+}
+.notehead div span{
+    margin-left: 2%;
+}
+.notehead i{
+    transition: ease-in-out all 300ms;
+    border-radius: 20%;
+    cursor: pointer;
+}
+.notehead i:hover{
+    color: beige;
+    background-color: brown;
+}
+.notecontent{
+    /* border: 1px black solid; */
+    width: 100%;
+    height: 76%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size:  x-large;
+    position: relative;
+    background-color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 2%;
+    word-break: break-word;
+}
+.notecontent textarea{
+/* .writingarea{ */
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    font-size: x-large;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
+}
+.notecontent button{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 23%;
+    height: 20%;
+    z-index: 2;
+    background-color: burlywood;
+    font-size: 20px;
+    border-style: none;
+    color: brown;
+    cursor: pointer;
+    transition: ease-in-out all 300ms;
+}
+.notecontent button:active{
+    border-style: none;
+}
+.notecontent button:hover{
+    background-color: brown;
+    color:burlywood;
+}
+
+@media screen and (max-width: 1000px){
+    .maincontainer{
+        grid-template-columns: 40% 40%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .maincontainer{
+        grid-template-columns: 70%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .maincontainer{
+        grid-template-columns: 80%;
+    }
+}
