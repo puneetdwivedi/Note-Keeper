@@ -1,4 +1,7 @@
 // local storage
+let notes_data = [];
+localStorage.setItem("local_notes", notes_data);
+
 function saveonlocal() {
     let notes_data = [];
     let notes_elemnts = document.querySelector(".maincontainer");
