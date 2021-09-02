@@ -79,8 +79,6 @@ let addnote = (text = "") => {
             note.querySelector("textarea").style.zIndex = "-1";
             note.querySelector("button").style.zIndex = "-2";
           }
-        } else {
-          alert( "This page is not reloaded");
         }
       }
 }
