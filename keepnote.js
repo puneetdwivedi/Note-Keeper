@@ -3,7 +3,7 @@ let notes_data = [];
 localStorage.setItem("local_notes", notes_data);
 
 function saveonlocal() {
-    let notes_data = [];
+    // let notes_data = [];
     let notes_elemnts = document.querySelector(".maincontainer");
     let notes = notes_elemnts.querySelectorAll("p");
     for (let i = 0; i < notes.length; i++) {
@@ -87,10 +87,10 @@ let addnote = (text = "") => {
 }
 
 // getting and displaying data from local storage
-let notes_data = ((localStorage.getItem("local_notes"))).split(",");
+let note_data = ((localStorage.getItem("local_notes"))).split(",");
 // console.log(notes_data);
-if (notes_data && !(notes_data.length==1 && notes_data[0]=="")) {
-    notes_data.forEach((note) => addnote(note));
+if (note_data && !(note_data.length==1 && note_data[0]=="")) {
+    note_data.forEach((note) => addnote(note));
 }
 
 // on clicking addnote
