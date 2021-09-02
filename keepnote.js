@@ -1,12 +1,12 @@
 // local storage
 function saveonlocal() {
-    let notes_data = [""];
+    let notes_data = [];
     let notes_elemnts = document.querySelector(".maincontainer");
     let notes = notes_elemnts.querySelectorAll("p");
     for (let i = 0; i < notes.length; i++) {
-        notes_data.push(notes[i].innerHTML);
+        notes_data.push((notes[i].innerHTML));
     }
-    console.log(notes_data);
+    // console.log(notes_data);
     localStorage.setItem("local_notes", notes_data);
 }
 
@@ -75,12 +75,11 @@ let addnote = (text = "") => {
 }
 
 // getting and displaying data from local storage
-let notes_data = JSON.parse((localStorage.getItem("local_notes")));
-if (notes_data) {
+let notes_data = ((localStorage.getItem("local_notes"))).split(",");
+// console.log(notes_data);
+if (notes_data && !(notes_data.length==1 && notes_data[0]=="")) {
     notes_data.forEach((note) => addnote(note));
 }
-
-
 
 // on clicking addnote
 document.getElementById("addnote").addEventListener("click", () => addnote(""));
